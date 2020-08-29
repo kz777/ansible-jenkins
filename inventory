@@ -1,2 +1,3 @@
 [webservers]
 54.224.229.244
+host_key_checking=False
