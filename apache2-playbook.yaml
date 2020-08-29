@@ -1,0 +1,18 @@
+---
+- name: Apache server
+  hosts: webserver
+  tasks:
+  - name: Install apache httpd  (state=present is optional)
+    apt:
+      name: apache2
+      state: present
+  - name: start nginx
+    service:
+      name: apache2
+      state: started
+
+  - name: copy the nginx config file and restart nginx
+    copy:
+      src: index.html
+      dest: /var/www/html/
+      
