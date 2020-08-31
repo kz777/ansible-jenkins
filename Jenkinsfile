@@ -11,7 +11,7 @@ pipeline {
       stage('run ansible') {
          steps {
             //  sh 'ansible webservers -m ping'
-            ansiblePlaybook become: true, credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'apache2-playbook.yaml'
+            ansiblePlaybook colorized: true, disableHostKeyChecking: true, installation: 'ansible', playbook: 'apache2-playbook.yaml'   
          }
       }
    }
